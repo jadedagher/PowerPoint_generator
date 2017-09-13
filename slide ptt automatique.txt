@@ -1,0 +1,440 @@
+Sub auto()
+Dim PPT As Object
+Dim PptDoc As Object
+Dim NbShpe As Byte
+Dim cible
+Set PPT = CreateObject("Powerpoint.Application") 'creation session PowerPoint
+PPT.Visible = True
+Set PptDoc = PPT.Presentations.Open("C:\Users\j.dagher\Desktop\Criteo offline\Criteo Weekly\weekly meeting (envoyer jeudi)\template\template.pptx") 'ouverture fichier ppt
+
+'Copy Range from Excel tier1 CMRO tier1 ------------------------------------------------------------------------
+
+
+NbShpe = PptDoc.Slides(2).Shapes.Count
+'PptDoc.Slides(2).Shapes(NbShpe).Delete
+Sheets("Commercial rollout i++").Select
+Range("B5:S17").Select
+Selection.Copy
+PptDoc.Slides(2).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(2).Shapes.Count
+With PptDoc.Slides(2).Shapes(NbShpe)
+.Left = 30 'position horizontale dans le slide
+.Top = 85 'position verticale dans le slide
+.Height = 900 'hauteur image
+.Width = 900 'largeur image
+End With
+
+'Copy Range from Excel CMRO MMS ------------------------------------------------------------------------
+
+NbShpe = PptDoc.Slides(3).Shapes.Count
+'PptDoc.Slides(3).Shapes(NbShpe).Delete
+Sheets("Commercial rollout i++").Select
+Range("T5:AK17").Select
+Selection.Copy
+PptDoc.Slides(3).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(3).Shapes.Count
+With PptDoc.Slides(3).Shapes(NbShpe)
+.Left = 30 'position horizontale dans le slide
+.Top = 85 'position verticale dans le slide
+.Height = 900 'hauteur image
+.Width = 900 'largeur image
+End With
+
+
+
+'Copy Range from Excel tier1 test ------------------------------------------------------------------------
+
+NbShpe = PptDoc.Slides(4).Shapes.Count
+'PptDoc.Slides(4).Shapes(NbShpe).Delete
+Sheets("Test rollout i++").Select
+Range("B5:T11").Select
+Selection.Copy
+PptDoc.Slides(4).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(4).Shapes.Count
+With PptDoc.Slides(4).Shapes(NbShpe)
+.Left = 30 'position horizontale dans le slide
+.Top = 115 'position verticale dans le slide
+.Height = 900 'hauteur image
+.Width = 900 'largeur image
+End With
+
+
+'Copy Range from Excel MMS test------------------------------------------------------------------------
+NbShpe = PptDoc.Slides(5).Shapes.Count
+'PptDoc.Slides(5).Shapes(NbShpe).Delete
+Sheets("Test rollout i++").Select
+Range("U5:AM11").Select
+Selection.Copy
+PptDoc.Slides(5).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(5).Shapes.Count
+With PptDoc.Slides(5).Shapes(NbShpe)
+.Left = 30 'position horizontale dans le slide
+.Top = 115 'position verticale dans le slide
+.Height = 900 'hauteur image
+.Width = 900 'largeur image
+End With
+
+
+
+'global
+'----------------------------------------------------------------------------------------------------------------
+
+
+
+'Copy Range from Excel Tier1 CMRO global------------------------------------------------------------------------
+NbShpe = PptDoc.Slides(8).Shapes.Count
+'PptDoc.Slides(8).Shapes(NbShpe).Delete
+Sheets("Commercial rollout global").Select
+Range("B5:O17").Select
+Selection.Copy
+PptDoc.Slides(8).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(8).Shapes.Count
+With PptDoc.Slides(8).Shapes(NbShpe)
+.Left = 235 'position horizontale dans le slide
+.Top = 78 'position verticale dans le slide
+.Height = 700 'hauteur image
+.Width = 700 'largeur image
+End With
+
+'Copy Range from Excel MMS CMRO global------------------------------------------------------------------------
+NbShpe = PptDoc.Slides(9).Shapes.Count
+'PptDoc.Slides(9).Shapes(NbShpe).Delete
+Sheets("Commercial rollout global").Select
+Range("P5:AC17").Select
+Selection.Copy
+PptDoc.Slides(9).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(9).Shapes.Count
+With PptDoc.Slides(9).Shapes(NbShpe)
+.Left = 235 'position horizontale dans le slide
+.Top = 78 'position verticale dans le slide
+.Height = 700 'hauteur image
+.Width = 700 'largeur image
+End With
+
+'Copy Range from Excel MMS Test global------------------------------------------------------------------------
+NbShpe = PptDoc.Slides(10).Shapes.Count
+'PptDoc.Slides(10).Shapes(NbShpe).Delete
+Sheets("Test rollout global").Select
+Range("B5:P11").Select
+Selection.Copy
+PptDoc.Slides(10).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(10).Shapes.Count
+With PptDoc.Slides(10).Shapes(NbShpe)
+.Left = 235 'position horizontale dans le slide
+.Top = 78 'position verticale dans le slide
+.Height = 700 'hauteur image
+.Width = 700 'largeur image
+End With
+
+'Copy Range from MMS Test global------------------------------------------------------------------------
+NbShpe = PptDoc.Slides(11).Shapes.Count
+'PptDoc.Slides(11).Shapes(NbShpe).Delete
+Sheets("Test rollout global").Select
+Range("Q5:AE11").Select
+Selection.Copy
+PptDoc.Slides(11).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(11).Shapes.Count
+With PptDoc.Slides(11).Shapes(NbShpe)
+.Left = 235 'position horizontale dans le slide
+.Top = 78 'position verticale dans le slide
+.Height = 700 'hauteur image
+.Width = 700 'largeur image
+End With
+
+'Copy graph from CRO global------------------------------------------------------------------------
+
+Dim ChartObjects As Object
+
+
+NbShpe = PptDoc.Slides(13).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(1).Select
+Selection.Copy
+PptDoc.Slides(13).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(13).Shapes.Count
+With PptDoc.Slides(13).Shapes(NbShpe)
+.Left = 65 'position horizontale dans le slide
+.Top = 170 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(13).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(2).Select
+Selection.Copy
+PptDoc.Slides(13).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(13).Shapes.Count
+With PptDoc.Slides(13).Shapes(NbShpe)
+.Left = 410 'position horizontale dans le slide
+.Top = 170 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(13).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(15).Select
+Selection.Copy
+PptDoc.Slides(13).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(13).Shapes.Count
+With PptDoc.Slides(13).Shapes(NbShpe)
+.Left = 750 'position horizontale dans le slide
+.Top = 165 'position verticale dans le slide
+.Height = 133 'hauteur image
+.Width = 133 'largeur image
+End With
+
+'Copy graph from CRO Tier1&MMS EMEA------------------------------------------------------------------------
+
+'tier1
+
+NbShpe = PptDoc.Slides(14).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(3).Select
+Selection.Copy
+PptDoc.Slides(14).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(14).Shapes.Count
+With PptDoc.Slides(14).Shapes(NbShpe)
+.Left = 80 'position horizontale dans le slide
+.Top = 90 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(14).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(4).Select
+Selection.Copy
+PptDoc.Slides(14).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(14).Shapes.Count
+With PptDoc.Slides(14).Shapes(NbShpe)
+.Left = 425 'position horizontale dans le slide
+.Top = 90 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(14).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(16).Select
+Selection.Copy
+PptDoc.Slides(14).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(14).Shapes.Count
+With PptDoc.Slides(14).Shapes(NbShpe)
+.Left = 765 'position horizontale dans le slide
+.Top = 80 'position verticale dans le slide
+.Height = 120 'hauteur image
+.Width = 120 'largeur image
+End With
+
+'MMS
+
+NbShpe = PptDoc.Slides(14).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(9).Select
+Selection.Copy
+PptDoc.Slides(14).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(14).Shapes.Count
+With PptDoc.Slides(14).Shapes(NbShpe)
+.Left = 80 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(14).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(10).Select
+Selection.Copy
+PptDoc.Slides(14).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(14).Shapes.Count
+With PptDoc.Slides(14).Shapes(NbShpe)
+.Left = 425 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(14).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(19).Select
+Selection.Copy
+PptDoc.Slides(14).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(14).Shapes.Count
+With PptDoc.Slides(14).Shapes(NbShpe)
+.Left = 765 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 120 'hauteur image
+.Width = 120 'largeur image
+End With
+
+'Copy graph from CRO Tier1&MMS AMERICAS------------------------------------------------------------------------
+
+'tier1
+
+NbShpe = PptDoc.Slides(15).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(5).Select
+Selection.Copy
+PptDoc.Slides(15).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(15).Shapes.Count
+With PptDoc.Slides(15).Shapes(NbShpe)
+.Left = 80 'position horizontale dans le slide
+.Top = 90 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(15).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(6).Select
+Selection.Copy
+PptDoc.Slides(15).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(15).Shapes.Count
+With PptDoc.Slides(15).Shapes(NbShpe)
+.Left = 425 'position horizontale dans le slide
+.Top = 90 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(15).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(17).Select
+Selection.Copy
+PptDoc.Slides(15).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(15).Shapes.Count
+With PptDoc.Slides(15).Shapes(NbShpe)
+.Left = 765 'position horizontale dans le slide
+.Top = 80 'position verticale dans le slide
+.Height = 120 'hauteur image
+.Width = 120 'largeur image
+End With
+
+'MMS
+
+NbShpe = PptDoc.Slides(15).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(11).Select
+Selection.Copy
+PptDoc.Slides(15).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(15).Shapes.Count
+With PptDoc.Slides(15).Shapes(NbShpe)
+.Left = 80 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(15).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(12).Select
+Selection.Copy
+PptDoc.Slides(15).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(15).Shapes.Count
+With PptDoc.Slides(15).Shapes(NbShpe)
+.Left = 425 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(15).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(20).Select
+Selection.Copy
+PptDoc.Slides(15).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(15).Shapes.Count
+With PptDoc.Slides(15).Shapes(NbShpe)
+.Left = 765 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 120 'hauteur image
+.Width = 120 'largeur image
+End With
+
+'Copy graph from CRO Tier1&MMS APAC------------------------------------------------------------------------
+
+'tier1
+
+NbShpe = PptDoc.Slides(16).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(7).Select
+Selection.Copy
+PptDoc.Slides(16).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(16).Shapes.Count
+With PptDoc.Slides(16).Shapes(NbShpe)
+.Left = 80 'position horizontale dans le slide
+.Top = 90 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(16).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(8).Select
+Selection.Copy
+PptDoc.Slides(16).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(16).Shapes.Count
+With PptDoc.Slides(16).Shapes(NbShpe)
+.Left = 425 'position horizontale dans le slide
+.Top = 90 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(16).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(18).Select
+Selection.Copy
+PptDoc.Slides(16).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(16).Shapes.Count
+With PptDoc.Slides(16).Shapes(NbShpe)
+.Left = 765 'position horizontale dans le slide
+.Top = 80 'position verticale dans le slide
+.Height = 120 'hauteur image
+.Width = 120 'largeur image
+End With
+
+'MMS
+
+NbShpe = PptDoc.Slides(16).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(13).Select
+Selection.Copy
+PptDoc.Slides(16).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(16).Shapes.Count
+With PptDoc.Slides(16).Shapes(NbShpe)
+.Left = 80 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(16).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(14).Select
+Selection.Copy
+PptDoc.Slides(16).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(16).Shapes.Count
+With PptDoc.Slides(16).Shapes(NbShpe)
+.Left = 425 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 300 'hauteur image
+.Width = 300 'largeur image
+End With
+
+NbShpe = PptDoc.Slides(16).Shapes.Count
+Sheets("GRAPH CRO I++").Select
+ActiveSheet.ChartObjects(21).Select
+Selection.Copy
+PptDoc.Slides(16).Shapes.PasteSpecial DataType:=2
+NbShpe = PptDoc.Slides(16).Shapes.Count
+With PptDoc.Slides(16).Shapes(NbShpe)
+.Left = 765 'position horizontale dans le slide
+.Top = 320 'position verticale dans le slide
+.Height = 120 'hauteur image
+.Width = 120 'largeur image
+End With
+
+End Sub
